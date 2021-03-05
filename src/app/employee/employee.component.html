@@ -13,28 +13,33 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngIf="displayEmployee">
-          <td>
-            {{ employee.EmployeeId }}
+        <tr>
+          <td >
+            <span>{{ employee.EmployeeId }} </span>
           </td>
           <td>
-            {{ employee.FirstName }}
+            <span *ngIf="displayEmployee">{{ employee.FirstName }} </span>
+            <input type="text" [(ngModel)]="employee.FirstName"   *ngIf="EditEmployee" >
           </td>
           <td>
-            {{ employee.FirstName }}
+            <span *ngIf="displayEmployee">{{ employee.LastName }} </span>
+            <input type="text" [(ngModel)]="employee.LastName" *ngIf="EditEmployee" >
           </td>
           <td>
-            {{ employee.Dept }}
+            <span *ngIf="displayEmployee">{{ employee.Dept }} </span>
+            <input type="text" [(ngModel)] ="employee.Dept" *ngIf="EditEmployee" >
           </td>
           <td>
-            {{ employee.City }}
+            <span *ngIf="displayEmployee">{{ employee.City }} </span>
+            <input type="text" [(ngModel)] ="employee.City" *ngIf="EditEmployee" >
           </td>
           <td>
-            {{ employee.Email }}
+            <span *ngIf="displayEmployee">{{ employee.Email }} </span>
+            <input type="text" [(ngModel)] ="employee.Email" *ngIf="EditEmployee" >
           </td>
           <td>
             <button type="button"  class="btn btn-primary" (click)="EditEmp(employee.EmployeeId)"  >EditEmp</button>
-            <button class="btn btn-secondary" (click)="UpdateEmp(employee.EmployeeId)" >UpdateEmp</button>
+            <button class="btn btn-success" (click)="UpdateEmp(employee)" >UpdateEmp</button>
           </td>
         </tr>
       </tbody>

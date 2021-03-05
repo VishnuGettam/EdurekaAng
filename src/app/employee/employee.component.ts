@@ -16,16 +16,27 @@ export class EmployeeComponent implements OnInit {
     Email: 'vishnu@gmail.com',
   };
   displayEmployee: boolean = true;
+  EditEmployee:boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   EditEmp(empId: number) {
-    alert('Edit - ' + empId);
+    this.EditEmployee = true;
+    this.displayEmployee = false;
+
   }
 
-  UpdateEmp(empId: number) {
-    alert('Update - ' + empId);
+  UpdateEmp(emp:Employee) {
+
+    this.employee.FirstName = emp.FirstName;
+    this.employee.LastName = emp.LastName;
+    this.employee.Dept= emp.Dept;
+    this.employee.City = emp.City;
+    this.employee.Email = emp.Email;
+
+    this.displayEmployee = true;
+    this.EditEmployee = false;
   }
 }
