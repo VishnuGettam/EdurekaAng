@@ -9,10 +9,34 @@
           <th>Dept</th>
           <th>City</th>
           <th>Email</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr></tr>
+        <tr *ngIf="displayEmployee">
+          <td>
+            {{ employee.EmployeeId }}
+          </td>
+          <td>
+            {{ employee.FirstName }}
+          </td>
+          <td>
+            {{ employee.FirstName }}
+          </td>
+          <td>
+            {{ employee.Dept }}
+          </td>
+          <td>
+            {{ employee.City }}
+          </td>
+          <td>
+            {{ employee.Email }}
+          </td>
+          <td>
+            <button type="button"  class="btn btn-primary" (click)="EditEmp(employee.EmployeeId)"  >EditEmp</button>
+            <button class="btn btn-secondary" (click)="UpdateEmp(employee.EmployeeId)" >UpdateEmp</button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
