@@ -9,10 +9,39 @@
           <th>Dept</th>
           <th>City</th>
           <th>Email</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <tr></tr>
+        <tr>
+          <td >
+            <span>{{ employee.EmployeeId }} </span>
+          </td>
+          <td>
+            <span *ngIf="displayEmployee">{{ employee.FirstName }} </span>
+            <input type="text" [(ngModel)]="employee.FirstName"   *ngIf="EditEmployee" >
+          </td>
+          <td>
+            <span *ngIf="displayEmployee">{{ employee.LastName }} </span>
+            <input type="text" [(ngModel)]="employee.LastName" *ngIf="EditEmployee" >
+          </td>
+          <td>
+            <span *ngIf="displayEmployee">{{ employee.Dept }} </span>
+            <input type="text" [(ngModel)] ="employee.Dept" *ngIf="EditEmployee" >
+          </td>
+          <td>
+            <span *ngIf="displayEmployee">{{ employee.City }} </span>
+            <input type="text" [(ngModel)] ="employee.City" *ngIf="EditEmployee" >
+          </td>
+          <td>
+            <span *ngIf="displayEmployee">{{ employee.Email }} </span>
+            <input type="text" [(ngModel)] ="employee.Email" *ngIf="EditEmployee" >
+          </td>
+          <td>
+            <button type="button"  class="btn btn-primary" (click)="EditEmp(employee.EmployeeId)"  >EditEmp</button>
+            <button class="btn btn-success" (click)="UpdateEmp(employee)" >UpdateEmp</button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
