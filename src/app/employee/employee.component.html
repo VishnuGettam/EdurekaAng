@@ -9,37 +9,103 @@
           <th>Dept</th>
           <th>City</th>
           <th>Email</th>
-          <th></th>
+          <th>Additional Details</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td >
+        <tr *ngFor="let employee of empList" appColor  >
+          <td>
             <span>{{ employee.EmployeeId }} </span>
           </td>
           <td>
-            <span *ngIf="displayEmployee">{{ employee.FirstName }} </span>
-            <input type="text" [(ngModel)]="employee.FirstName"   *ngIf="EditEmployee" >
+            <div
+              *ngIf="
+                EditEmployeeId === employee.EmployeeId && EditEmployee == true;
+                else elseFNTemplate
+              "
+            >
+              <input type="text" [(ngModel)]="employee.FirstName" />
+            </div>
+            <ng-template #elseFNTemplate>
+              <span>{{ employee.FirstName }} </span>
+            </ng-template>
           </td>
           <td>
-            <span *ngIf="displayEmployee">{{ employee.LastName }} </span>
-            <input type="text" [(ngModel)]="employee.LastName" *ngIf="EditEmployee" >
+            <div
+              *ngIf="
+                EditEmployeeId === employee.EmployeeId && EditEmployee == true;
+                else elseLNTemplate
+              "
+            >
+              <input type="text" [(ngModel)]="employee.LastName" />
+            </div>
+            <ng-template #elseLNTemplate>
+              <span>{{ employee.LastName }} </span>
+            </ng-template>
           </td>
           <td>
-            <span *ngIf="displayEmployee">{{ employee.Dept }} </span>
-            <input type="text" [(ngModel)] ="employee.Dept" *ngIf="EditEmployee" >
+            <div
+              *ngIf="
+                EditEmployeeId == employee.EmployeeId && EditEmployee == true;
+                else elseDepTemplate
+              "
+            >
+              <input type="text" [(ngModel)]="employee.Dept" />
+            </div>
+            <ng-template #elseDepTemplate>
+              <span>{{ employee.Dept }} </span>
+            </ng-template>
           </td>
           <td>
-            <span *ngIf="displayEmployee">{{ employee.City }} </span>
-            <input type="text" [(ngModel)] ="employee.City" *ngIf="EditEmployee" >
+            <div
+              *ngIf="
+                EditEmployeeId == employee.EmployeeId && EditEmployee == true;
+                else elseCtyTemplate
+              "
+            >
+              <input type="text" [(ngModel)]="employee.City" />
+            </div>
+            <ng-template #elseCtyTemplate>
+              <span>{{ employee.City }} </span>
+            </ng-template>
           </td>
           <td>
-            <span *ngIf="displayEmployee">{{ employee.Email }} </span>
-            <input type="text" [(ngModel)] ="employee.Email" *ngIf="EditEmployee" >
+            <div
+              *ngIf="
+                EditEmployeeId == employee.EmployeeId && EditEmployee == true;
+                else elseEmlTemplate
+              "
+            >
+              <input type="text" [(ngModel)]="employee.Email" />
+            </div>
+            <ng-template #elseEmlTemplate>
+              <span>{{ employee.Email }} </span>
+            </ng-template>
           </td>
+
           <td>
-            <button type="button"  class="btn btn-primary" (click)="EditEmp(employee.EmployeeId)"  >EditEmp</button>
-            <button class="btn btn-success" (click)="UpdateEmp(employee)" >UpdateEmp</button>
+            <div
+              *ngIf="
+                EditEmployeeId == employee.EmployeeId && EditEmployee == true;
+                else elseEditTemplate
+              "
+            >
+              <button class="btn btn-success" (click)="UpdateEmp(employee,employee.EmployeeId)">
+                UpdateEmp
+              </button>
+            </div>
+            <ng-template #elseEditTemplate>
+              <button
+                type="button"
+                class="btn btn-primary"
+                (click)="EditEmp(employee.EmployeeId)"
+              >
+                EditEmp
+              </button>
+              <button class="btn btn-success" (click)="UpdateEmp(employee,employee.EmployeeId)">
+                UpdateEmp
+              </button>
+            </ng-template>
           </td>
         </tr>
       </tbody>
