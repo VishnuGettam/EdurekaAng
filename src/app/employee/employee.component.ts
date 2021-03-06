@@ -24,10 +24,10 @@ export class EmployeeComponent implements OnInit {
 
   constructor() {
         this.empList = [
-          {EmployeeId: 1,FirstName: 'Vishnu',LastName: 'Gettam',Dept: 'IT',City: 'Chittoor',Email: 'vishnu@gmail.com',},
-          {EmployeeId: 2,FirstName: 'Prasad',LastName: 'Gettam',Dept: 'IT',City: 'Chittoor',Email: 'Prasad@gmail.com',},
-          {EmployeeId: 3,FirstName: 'Divya',LastName: 'Gettam',Dept: 'HR',City: 'Chittoor',Email: 'Divya@gmail.com',},
-          {EmployeeId: 4,FirstName: 'Vihaan',LastName: 'Gettam',Dept: 'IT',City: 'Chittoor',Email: 'vihaan@gmail.com',}
+          {EmployeeId: 1,FirstName: 'Vishnu',LastName: 'Gettam',Dept: 'IT',City: 'Chittoor',Email: 'vishnu@gmail.com',Salary:500,DOB:"04/05/1990"},
+          {EmployeeId: 2,FirstName: 'Prasad',LastName: 'Gettam',Dept: 'IT',City: 'Chittoor',Email: 'Prasad@gmail.com',Salary:2000,DOB:"04/06/1990"},
+          {EmployeeId: 3,FirstName: 'Divya',LastName: 'Gettam',Dept: 'HR',City: 'Chittoor',Email: 'Divya@gmail.com',Salary:6500,DOB:"11/05/1989"},
+          {EmployeeId: 4,FirstName: 'Vihaan',LastName: 'Gettam',Dept: 'IT',City: 'Chittoor',Email: 'vihaan@gmail.com',Salary:8700,DOB:"11/09/2013"}
 
       ];
 
@@ -52,6 +52,8 @@ export class EmployeeComponent implements OnInit {
              empData.City= emp.City;
              empData.Dept = emp.Dept;
              empData.Email = emp.Email;
+             empData.DOB = emp.DOB.toString();
+             empData.Salary = emp.Salary
             }
     })
         this.EditEmployee = false;

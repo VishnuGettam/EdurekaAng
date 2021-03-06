@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="row">
+<!-- <div class="container">
+  <div class="row"> -->
     <table border="1" class="table">
       <thead>
         <tr>
@@ -9,6 +9,8 @@
           <th>Dept</th>
           <th>City</th>
           <th>Email</th>
+          <th>Date of Birth</th>
+          <th>Salary</th>
           <th>Additional Details</th>
         </tr>
       </thead>
@@ -82,7 +84,32 @@
               <span>{{ employee.Email }} </span>
             </ng-template>
           </td>
-
+          <td>
+            <div
+            *ngIf="
+              EditEmployeeId == employee.EmployeeId && EditEmployee == true;
+              else elseDOBTemplate
+            "
+          >
+            <input type="text" [(ngModel)]="employee.DOB" />
+          </div>
+          <ng-template #elseDOBTemplate>
+            <span>{{ employee.DOB | date | uppercase }} </span>
+          </ng-template>
+          </td>
+          <td>
+            <div
+            *ngIf="
+              EditEmployeeId == employee.EmployeeId && EditEmployee == true;
+              else elseSLTemplate
+            "
+          >
+            <input type="text" [(ngModel)]="employee.Salary" />
+          </div>
+          <ng-template #elseSLTemplate>
+            <span>{{ employee.Salary | currency:'INR'  }} </span>
+          </ng-template>
+          </td>
           <td>
             <div
               *ngIf="
@@ -110,5 +137,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
-</div>
+  <!-- </div>
+</div> -->

@@ -5,7 +5,9 @@ export interface Employee{
     LastName:string,
     Dept:string,
     City:string,
-    Email:string
+    Email:string,
+    Salary:number,
+    DOB:string
 
 
 }
