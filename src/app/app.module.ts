@@ -1,3 +1,5 @@
+import { NewEmployeeComponent } from './newemployee/newemployee.component';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,7 +13,9 @@ import { ColorDirective } from './Directives/color.directive';
   declarations: [
     AppComponent,
     EmployeeComponent,
-    ColorDirective
+    ColorDirective,
+    NewEmployeeComponent
+
   ],
   imports: [
     BrowserModule,

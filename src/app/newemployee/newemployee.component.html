@@ -1,0 +1,27 @@
+<table border="1" class="table">
+  <thead>
+    <tr>
+      <th>Employee_Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+<tr *ngFor="let employee of EmpList" >
+<td>
+  {{employee.id}}
+</td>
+<td>
+  {{employee.employee_name}}
+</td>
+<td>
+  {{employee.employee_salary}}
+</td>
+<td>
+  {{employee.employee_age}}
+</td>
+
+</tr>
+  </tbody>
+</table>
