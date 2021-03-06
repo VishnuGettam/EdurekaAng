@@ -7,7 +7,7 @@ export interface Employee{
     City:string,
     Email:string,
     Salary:number,
-    DOB:string
+    DOB:any
 
 
 }

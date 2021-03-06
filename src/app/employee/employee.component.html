@@ -94,7 +94,7 @@
             <input type="text" [(ngModel)]="employee.DOB" />
           </div>
           <ng-template #elseDOBTemplate>
-            <span>{{ employee.DOB | date | uppercase }} </span>
+            <span>{{ employee.DOB | date :"MMM,d,y" | uppercase }} </span>
           </ng-template>
           </td>
           <td>
