@@ -43,6 +43,13 @@ export class EmployeeService  {
       employee_age: 12,
       profile_image: 'N/A',
     },
+    {
+      id: 6,
+      employee_name: 'Another Test User',
+      employee_salary: 89456,
+      employee_age: 53,
+      profile_image: 'N/A',
+    },
   ];
 
   GetEmployeeDetails(): Employee2[] {
