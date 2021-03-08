@@ -9,7 +9,7 @@ import { Employee2 } from '../newemployee/employee2';
 export class EmployeeService {
   constructor(private httpService: HttpClient) {}
 
-  private _url = 'https://dummy.restapiexample.com/api/v1/employees';
+  private _url = 'http://dummy.restapiexample.com/api/v1/employees';
   // NewEmployeeList: Employee2[] = [
   //   {
   //     id: 1,
